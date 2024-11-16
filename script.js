@@ -90,11 +90,11 @@ function edits(li , span1 , span3 , editbtn) {
 }
 
 
-
+//this for notifications
 
 let permission = Notification.permission;
 
-if(permission === "granted"){
+if(permission === "granted"){ //this for giving permission to access notification 
    showNotification();
 } else if(permission === "default"){
    requestAndShowPermission();
@@ -109,7 +109,7 @@ function requestAndShowPermission() {
         }
     });
 }
-function showNotification(tasktext) {
+function showNotification(tasktext) {//this for what in notification
 let title = "Task Added";
 let body = `ya have added " ${tasktext} " `;
 
