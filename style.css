@@ -107,3 +107,17 @@ li{
   border-radius: 5px;
   height: 30px;
 }
+
+#notification{
+  display: none; 
+  position: fixed; 
+  top: 10px;
+  z-index: 5;
+  right: 10px;
+  border: white 2px solid;
+  background: #4CAF50; 
+  color: white; 
+  padding: 10px;
+  transition: ease-in-out 0.3s;
+  border-radius: 5px;
+}
