@@ -1,0 +1,108 @@
+body{
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: rgb(37, 37, 37);
+  color: #333;
+}
+button{
+  cursor: pointer;
+}
+body div {
+  width: 80%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+#myForm input[type="text"] {
+  width: 70%;
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+#myForm button {
+  padding: 10px 20px;
+  background-color: #05bb33;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#myForm button:hover {
+  background-color: #4682B4;
+}
+#list {
+  padding: 0;
+}
+
+#list li {
+    background-color: #dad7d7;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+li{
+    animation-name: list;
+    animation-duration: 0.5s;
+    animation-timing-function:ease-in-out;
+}
+@keyframes list {
+  0% {
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(1.2);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+
+.closebtn{
+  background-color: transparent;
+  color: red;
+  border: none;
+}
+#edit{
+  background-color: transparent;
+  border: none;
+}
+.editing{
+  color:#4682B4;
+}
+.editing .no{
+  display: none !important;
+}
+
+.ched{
+  order: 1 !important;
+}
+.or{
+  order: 2 !important;
+  font-size: large;
+}
+.ord{
+  order: 3 !important;
+}
+
+.changeinput{
+  outline: none;
+  width: auto;
+  border: none;
+  border-radius: 5px;
+  height: 30px;
+}
