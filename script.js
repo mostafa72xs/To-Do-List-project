@@ -59,7 +59,7 @@ function addTask(value , taskDone = false){
     span1.innerHTML = value;
     
     saveTasksToLocalStorage()//to save actions to local storage 
-    showNotification(value)
+    notification(value)
 }
 
 
@@ -90,38 +90,19 @@ function edits(li , span1 , span3 , editbtn) {
 }
 
 
-//this for notifications
+//this for notifications pop up
 
-let permission = Notification.permission;
 
-if(permission === "granted"){ //this for giving permission to access notification 
-   showNotification();
-} else if(permission === "default"){
-   requestAndShowPermission();
-} else {
-  alert("Use normal alert");
+function notification(value){
+    const notification = document.getElementById('notification');
+    notification.innerHTML = `Task added: ${value}`;
+    notification.style.display = 'block';
+
+    // Hide notification after 3 seconds
+    setTimeout(() => {
+        notification.style.display = 'none';
+    }, 3000);
 }
-
-function requestAndShowPermission() {
-    Notification.requestPermission(function (permission) {
-        if (permission === "granted") {
-            showNotification();
-        }
-    });
-}
-function showNotification(tasktext) {//this for what in notification
-let title = "Task Added";
-let body = `ya have added " ${tasktext} " `;
-
-let notification = new Notification(title, { body });
-
-notification.onclick = () => {
-    notification.close();
-    window.parent.focus();
-}
-}
-
-
 
 
 
