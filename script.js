@@ -19,8 +19,8 @@ function addTask(value , taskDone = false){
     // this all to make three spans span3 for checkbox span2 for edit and delete buttons, span 1 for the value all in list item (li)
     const span1 = document.createElement('span');
     const span2 = document.createElement('span');
-    const span3 = document.createElement('span')
-    span1.className = 'or'
+    const span3 = document.createElement('span');
+    span1.className = 'or';
     span2.className = 'ord';
     span3.className = 'ched';
     const li = document.createElement('li');
@@ -58,10 +58,9 @@ function addTask(value , taskDone = false){
     editbtn.onclick = function(){ edits(li , span1 , span3 , editbtn )};
     span1.innerHTML = value;
     
-    saveTasksToLocalStorage()//to save actions to local storage 
+    saveTasksToLocalStorage() //to save actions to local storage 
     notification(value)
 }
-
 
 // this function to edit the value
 
@@ -74,8 +73,7 @@ function edits(li , span1 , span3 , editbtn) {
         li.classList.remove('editing');// remove the class
         editbtn.innerHTML = 'edited'; // set diffrent name to check if the value changeed
         li.appendChild(span3);
-        span1.className = 'or';
-        not3()
+        span1.className = 'or';not3()
     } else{
         const inpust = document.createElement('input');
         inpust.className = 'changeinput';
@@ -86,12 +84,10 @@ function edits(li , span1 , span3 , editbtn) {
         span1.className='no';// set the class to disable with css the previous value when editing
         li.removeChild(span3)
         editbtn.innerHTML = 'Save'; //the button value turns when editing
+        
     }
     saveTasksToLocalStorage() //for each action with editing saved to local storage
 }
-
-
-//this for notifications pop up
 
 
 function notification(value){
@@ -104,6 +100,7 @@ function notification(value){
         notification.style.display = 'none';
     }, 3000);
 }
+
 //this for delete btn
 function not2(){
     const not2 = document.getElementById('notification2')
@@ -125,8 +122,6 @@ function not3(){
         not3.style.display = 'none';
     }, 3000);
 }
-
-
 
 
 
