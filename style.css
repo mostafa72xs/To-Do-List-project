@@ -78,6 +78,16 @@ li{
   color: red;
   border: none;
 }
+@keyframes closed {
+  from{ margin-left: 0;
+  background-color: #dad7d7;
+  }
+  to{ margin-left: -500px;
+    background-color: red;
+  }
+}
+
+
 #edit{
   background-color: transparent;
   border: none;
