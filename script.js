@@ -54,7 +54,7 @@ function addTask(value , taskDone = false){
     span2.appendChild(deletebtn);
     span3.appendChild(checkBox)
     deletebtn.className = 'closebtn';
-    deletebtn.onclick = function(){ li.remove() };
+    deletebtn.onclick = function(){ li.style.animationName = 'closed' , setTimeout(() => { li.remove() }, 500)  , saveTasksToLocalStorage() , not2()};
     editbtn.onclick = function(){ edits(li , span1 , span3 , editbtn )};
     span1.innerHTML = value;
     
@@ -75,6 +75,7 @@ function edits(li , span1 , span3 , editbtn) {
         editbtn.innerHTML = 'edited'; // set diffrent name to check if the value changeed
         li.appendChild(span3);
         span1.className = 'or';
+        not3()
     } else{
         const inpust = document.createElement('input');
         inpust.className = 'changeinput';
@@ -101,6 +102,27 @@ function notification(value){
     // Hide notification after 3 seconds
     setTimeout(() => {
         notification.style.display = 'none';
+    }, 3000);
+}
+//this for delete btn
+function not2(){
+    const not2 = document.getElementById('notification2')
+    not2.innerHTML = `Task deleted`;
+    not2.style.display = 'block';
+
+    setTimeout(() => {
+        not2.style.display = 'none';
+    }, 3000);
+}
+
+//this for edited btn
+function not3(){
+    const not3 = document.getElementById('notification3')
+    not3.innerHTML = `Task edited`;
+    not3.style.display = 'block';
+
+    setTimeout(() => {
+        not3.style.display = 'none';
     }, 3000);
 }
 
