@@ -121,3 +121,30 @@ li{
   transition: ease-in-out 0.3s;
   border-radius: 5px;
 }
+#notification2{
+  display: none; 
+  position: fixed; 
+  top: 10px;
+  z-index: 5;
+  right: 10px;
+  border: white 2px solid;
+  background: #df3535; 
+  color: white; 
+  padding: 10px;
+  transition: ease-in-out 0.3s;
+  border-radius: 5px;
+} 
+
+#notification3{
+  display: none; 
+  position: fixed; 
+  top: 10px;
+  z-index: 5;
+  right: 10px;
+  border: white 2px solid;
+  background: #4682B4; 
+  color: white; 
+  padding: 10px;
+  transition: ease-in-out 0.3s;
+  border-radius: 5px;
+}
